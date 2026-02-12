@@ -22,8 +22,7 @@
     },
     "api/margin/optimize.ts": {
       "memory": 2048,
-      "maxDuration": 30,
-      "description": "Endpoint for continuous unit-economic margin optimization tuning."
+      "maxDuration": 30
     },
     "api/pricing/recommend.ts": {
       "memory": 2048,
