@@ -18,8 +18,7 @@
     },
     "api/mas/learn.ts": {
       "memory": 3008,
-      "maxDuration": 60,
-      "description": "High-memory endpoint for autonomous reinforcement learning cycles."
+      "maxDuration": 60
     },
     "api/margin/optimize.ts": {
       "memory": 2048,
