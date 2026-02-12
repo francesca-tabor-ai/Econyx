@@ -26,8 +26,7 @@
     },
     "api/pricing/recommend.ts": {
       "memory": 2048,
-      "maxDuration": 10,
-      "description": "Real-time dynamic pricing recommendation engine."
+      "maxDuration": 10
     },
     "api/marketplace/transact.ts": {
       "memory": 1024,
