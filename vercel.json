@@ -1,0 +1,71 @@
+{
+  "version": 2,
+  "framework": "nextjs",
+  "regions": ["sfo1", "iad1", "lhr1", "sin1", "gru1"],
+  "functions": {
+    "api/budget/evaluate.ts": {
+      "memory": 1024,
+      "maxDuration": 5,
+      "includeFiles": "services/**"
+    },
+    "api/forecasting/**/*.ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    },
+    "api/maturity/**/*.ts": {
+      "memory": 1024,
+      "maxDuration": 15
+    },
+    "api/mas/learn.ts": {
+      "memory": 3008,
+      "maxDuration": 60,
+      "description": "High-memory endpoint for autonomous reinforcement learning cycles."
+    },
+    "api/margin/optimize.ts": {
+      "memory": 2048,
+      "maxDuration": 30,
+      "description": "Endpoint for continuous unit-economic margin optimization tuning."
+    },
+    "api/pricing/recommend.ts": {
+      "memory": 2048,
+      "maxDuration": 10,
+      "description": "Real-time dynamic pricing recommendation engine."
+    },
+    "api/marketplace/transact.ts": {
+      "memory": 1024,
+      "maxDuration": 5,
+      "description": "Low-latency atomic transaction processor for the internal AI economy."
+    }
+  },
+  "headers": [
+    {
+      "source": "/api/budget/evaluate",
+      "headers": [
+        { "key": "Cache-Control", "value": "no-store, max-age=0" },
+        { "key": "X-Vercel-Regional-Routing", "value": "optimal" },
+        { "key": "X-Performance-Index", "value": "high" }
+      ]
+    },
+    {
+      "source": "/api/forecasting/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "s-maxage=3600, stale-while-revalidate" },
+        { "key": "X-Performance-Optimized", "value": "true" }
+      ]
+    },
+    {
+      "source": "/api/telemetry/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "POST, OPTIONS" },
+        { "key": "X-Edge-Runtime", "value": "true" }
+      ]
+    }
+  ],
+  "env": {
+    "SUPABASE_URL": "@supabase_url",
+    "SUPABASE_ANON_KEY": "@supabase_anon_key",
+    "EDGE_CONFIG": "@edge_config",
+    "PERFORMANCE_MONITORING_ENABLED": "true"
+  }
+}
