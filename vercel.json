@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": "nextjs",
   "regions": ["sfo1", "iad1", "lhr1", "sin1", "gru1"],
   "functions": {
