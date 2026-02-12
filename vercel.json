@@ -30,8 +30,7 @@
     },
     "api/marketplace/transact.ts": {
       "memory": 1024,
-      "maxDuration": 5,
-      "description": "Low-latency atomic transaction processor for the internal AI economy."
+      "maxDuration": 5
     }
   },
   "headers": [
